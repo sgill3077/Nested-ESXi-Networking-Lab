@@ -149,8 +149,10 @@ Verifies correct IP assignment inside nested guest VM.
 <details>
 <summary><strong>5. End-to-End Internet Connectivity Test</strong></summary>
 
-Final validation: guest VM reaching external internet.
-
+Final validation: 
+Success -> Link through Physical Host Wi-Fi to Internet
+Success -> Local link to Parent ESXi Host
+Success -> Link to VMware Workstation NAT Gateway
 ![Ping Test](screenshots/internet-ping-success.png)
 
 </details>
