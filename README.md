@@ -164,6 +164,6 @@ Verifies correct IP assignment inside nested guest VM.
 
 ## Lessons Learned
 
-Building the environment was only part of the objective. The greater value came from understanding how the components interacted and developing a repeatable methodology for troubleshooting complex networking problems.
+Building the environment was only part of the goal. The main value was understanding how the components work together and learning a repeatable way to troubleshoot network issues.
 
-The experience reinforced the importance of approaching infrastructure issues methodically by validating each layer independently before proceeding to the next.
+It reinforced the need to check each layer step by step before moving on.
