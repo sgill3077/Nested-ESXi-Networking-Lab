@@ -149,10 +149,34 @@ Verifies correct IP assignment inside nested guest VM.
 <details>
 <summary><strong>5. End-to-End Internet Connectivity Test</strong></summary>
 
-Final validation: 
-Success -> Link through Physical Host Wi-Fi to Internet
-Success -> Local link to Parent ESXi Host
-Success -> Link to VMware Workstation NAT Gateway
+### Final Validation Result
+
+All network layers successfully validated from nested VM to internet:
+
+---
+
+### Layer 1 → Guest VM to ESXi Host
+✔ Success — Local link established
+
+---
+
+### Layer 2 → ESXi to VMware Workstation NAT Gateway
+✔ Success — Routed through VMnet8 NAT
+
+---
+
+### Layer 3 → Workstation to Physical Host Wi-Fi
+✔ Success — NAT translated traffic correctly
+
+---
+
+### Layer 4 → Internet Connectivity
+✔ Success — External reachability confirmed
+
+---
+
+### Proof of Connectivity
+
 ![Ping Test](screenshots/internet-ping-success.png)
 
 </details>
