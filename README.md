@@ -154,7 +154,6 @@ Verifies correct IP assignment inside nested guest VM.
 ✔ Guest VM → ESXi Host  
 ✔ ESXi Host → VMware Workstation NAT Gateway  
 ✔ VMware Workstation → Internet (Wi-Fi)
-### Proof of Connectivity
 
 ![Ping Test](screenshots/internet-ping-success.png)
 
