@@ -149,7 +149,7 @@ Verifies correct IP assignment inside nested guest VM.
 <details>
 <summary><strong>5. End-to-End Internet Connectivity Test</strong></summary>
 
-### Final Validation Result
+Final Validation Result
 
 ✔ Guest VM → ESXi Host  
 ✔ ESXi Host → VMware Workstation NAT Gateway  
