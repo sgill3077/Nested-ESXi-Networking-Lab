@@ -38,9 +38,6 @@ The primary objective was not only to build the environment but also to understa
 | Network Mode           | VMware NAT (VMnet8) |
 | Virtual Switch         | ESXi vSwitch0       |
 
-- [ESXi Lab Guide](./VMware/ESXi/)
-- [Networking Concepts](./Networking/)
-- [Container Projects](./Containers/)
 ---
 
 ## Network Topology
