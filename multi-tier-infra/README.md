@@ -159,14 +159,23 @@ Validates network connectivity and routing from the backend VM, including defaul
 
 ```id="struct1"
 .
-├── README.md
-├── networking/
-│   └── esxi-setup.md
-├── multi-tier-infra/
-│   ├── README.md
-│   ├── assets/
-│   │   └── architecture.png
-│   └── configs/
+── multi-tier-infra
+│   ├── assets
+│   │   ├── architecture.png
+│   │   ├── backend-servers.png
+│   │   ├── dns-resolution.png
+│   │   ├── load-balancing-proof.png
+│   │   ├── network-connectivity.png
+│   │   └── router-services.png
+│   ├── configs
+│   │   ├── dnsmasq.conf
+│   │   ├── firewalld.conf
+│   │   └── nginx.conf
+│   ├── docs
+│   │   ├── architecture-notes.md
+│   │   └── troubleshooting-kb.md
+│   └── README.md
+
 ```
 
 ---
