@@ -1,3 +1,5 @@
+# 🚀 Nested ESXi Networking Lab on Fedora Linux
+
 ![Fedora](https://img.shields.io/badge/Fedora_Linux-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)
 ![VMware Workstation](https://img.shields.io/badge/Workstation-FF6B00?style=for-the-badge&logo=vmware&logoColor=white)
 ![Virtualization](https://img.shields.io/badge/Virtualization-9B5DE5?style=for-the-badge)
@@ -7,13 +9,58 @@
 ![Root Cause Analysis](https://img.shields.io/badge/RCA-FFB703?style=for-the-badge)
 ![Status Completed](https://img.shields.io/badge/Status-Completed-06D6A0?style=for-the-badge)
 
-# Nested ESXi Networking Lab on Fedora Linux
+---
 
-## Project Overview
+## 📌 Project Overview
 
-This project documents the design, deployment, troubleshooting, and documentation of a nested VMware ESXi environment running on VMware Workstation hosted on Fedora Linux.
+This project documents the design, deployment, and troubleshooting of a nested VMware ESXi environment running on VMware Workstation hosted on Fedora Linux.
 
-The primary objective was not only to build the environment but also to understand the networking concepts involved and develop a structured troubleshooting methodology for diagnosing connectivity issues within nested virtualization environments.
+The objective evolved beyond basic virtualization into building a multi-tier infrastructure stack, integrating networking, security, DNS, and application delivery components.
+
+---
+
+## 🚀 Advanced Infrastructure Extension
+
+This lab was extended into a production-style multi-tier architecture, introducing:
+
+- Linux-based router (NAT + firewalld)
+- Internal DNS using dnsmasq
+- Nginx reverse proxy
+- Load balancing across backend servers
+- Segmented DMZ network architecture
+
+👉 **[View Multi-Tier Infrastructure Project](./multi-tier-infra/README.md)**
+
+---
+
+## 🧠 What This Project Demonstrates
+
+- End-to-end infrastructure design (virtualization → networking → application layer)
+- Real-world troubleshooting and root cause analysis
+- Linux networking, firewall, and DNS configuration
+- Reverse proxy and load balancing implementation
+- Progressive lab development into a multi-tier architecture
+
+---
+
+## 🧪 Demo / Validation
+
+Load balancing verification:
+
+    for i in {1..10}; do curl -s http://web.lab; done
+
+Expected output:
+
+    Hello from WEB01
+    Hello from WEB02
+    Hello from WEB01
+    Hello from WEB02
+
+---
+
+## 🏁 Status
+
+✔ Completed — with advanced multi-tier infrastructure integration
 
 ---
 
