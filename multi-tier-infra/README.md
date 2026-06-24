@@ -51,8 +51,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
 - Load balancing across multiple backend servers
 - Segmented DMZ-based architecture
 
-👉 **[View Multi-Tier Infrastructure Details](./multi-tier-infra/)**
-
+👉 **[View Multi-Tier Infrastructure Details](multi-tier-infra/README.md)**
 ---
 
 ## 🏗️ High-Level Architecture (Click to Expand)
