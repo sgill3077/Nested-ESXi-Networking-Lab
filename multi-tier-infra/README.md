@@ -158,7 +158,6 @@ Validates network connectivity and routing from the backend VM, including defaul
 ## 📂 Project Structure
 
 ```id="struct1"
-.
 ── multi-tier-infra
 │   ├── assets
 │   │   ├── architecture.png
