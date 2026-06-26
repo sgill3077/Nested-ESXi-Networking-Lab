@@ -181,7 +181,7 @@ Validates network connectivity and routing from the backend VM, including defaul
 
 ## 📈 Outcome
 
-This project demonstrates the ability to build and troubleshoot a **multi-layered infrastructure stack**, similar to real-world environments used in DevOps and Systems Engineering roles.
+This project demonstrates the ability to build, scale, and troubleshoot a **multi-layered infrastructure stack**, mimicking industry-standard enterprise patterns used extensively across DevOps, Infrastructure Automation, and Systems Engineering disciplines.
 
 ---
 
@@ -193,10 +193,9 @@ This project demonstrates the ability to build and troubleshoot a **multi-layere
 
 ##  Future Enhancements
 
-- HTTPS (TLS termination)
-- Containerization (Podman/Docker)
-- Monitoring (Prometheus/Grafana)
-- CI/CD pipelines
-- High availability setup
+- [ ] Automated SSL/TLS Termination (Local Root Authority Certificates)
+- [ ] Containerized Microservice Pods (Podman/Docker engine integrations)
+- [ ] Centralized Telemetry Logging (Prometheus metric collectors & Grafana interfaces)
+- [ ] Infrastructure as Code (Automating ESXi deployment maps with Terraform/Ansible)
 
 ---
