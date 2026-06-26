@@ -19,7 +19,7 @@ The objective evolved beyond basic virtualization into building a multi-tier inf
 
 ---
 
-## 🚀 Advanced Infrastructure Extension
+##  Advanced Infrastructure Extension
 
 This lab was extended into a production-style multi-tier architecture, introducing:
 
