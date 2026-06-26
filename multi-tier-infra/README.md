@@ -1,4 +1,4 @@
-# 🚀 Nested ESXi Infrastructure Lab (Fedora Linux)
+#  Nested ESXi Infrastructure Lab (Fedora Linux)
 
 ![Linux](https://img.shields.io/badge/Linux-Fedora-blue)
 ![VMware](https://img.shields.io/badge/VMware-ESXi-orange)
@@ -192,7 +192,7 @@ This project demonstrates the ability to build and troubleshoot a **multi-layere
 
 ---
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - HTTPS (TLS termination)
 - Containerization (Podman/Docker)
