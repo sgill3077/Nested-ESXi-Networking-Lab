@@ -1,4 +1,4 @@
-# 🚀 Nested ESXi Networking Lab on Fedora Linux
+#  Nested ESXi Networking Lab on Fedora Linux
 
 ![Fedora](https://img.shields.io/badge/Fedora_Linux-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)
 ![VMware Workstation](https://img.shields.io/badge/Workstation-FF6B00?style=for-the-badge&logo=vmware&logoColor=white)
