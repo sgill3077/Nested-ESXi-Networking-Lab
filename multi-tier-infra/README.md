@@ -42,7 +42,7 @@ It evolves from basic virtualization into a **production-style multi-tier archit
 
 ---
 
-### 🔹 Phase 4 — Infrastructure Services 🚀
+### 🔹 Phase 4 — Infrastructure Services 
 
 Extended the lab into a multi-tier infrastructure by implementing:
 
