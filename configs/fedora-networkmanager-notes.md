@@ -636,7 +636,6 @@ tracepath google.com
 ```
 
 </detail>
----
 
 # Key Insight
 
