@@ -75,10 +75,10 @@ Extended the lab into a multi-tier infrastructure by implementing:
                                                                 │
                                               ESXi vSwitch (802.1Q Trunk • VLAN 4095)
                                                                 │
-                                  ┌─────────────────────────────┼───────────────────────────────┐
-                                  │                             │                               │
-                                  │                             │                               │
-                                  ▼                             ▼                               ▼
+                                  ┌─────────────────────────────┼───────────────────────────────────┐
+                                  │                             │                                   │
+                                  │                             │                                   │
+                                  ▼                             ▼                                   ▼
                          ┌───────────────────┐         ┌───────────────────┐              ┌───────────────────┐
                          │     Router VM     │         │      Web01 VM     │              │      Web02 VM     │
                          │      Fedora       │         │      VLAN 10      │              │      VLAN 20      │
@@ -88,10 +88,10 @@ Extended the lab into a multi-tier infrastructure by implementing:
                          ┌─────────┴──────────────────────────────────────────────────────────────────────────┐
                          │                             Router VM Network Interfaces                           │
                          ├────────────────────────────────────────────────────────────────────────────────────┤
-                         │ ens37      WAN / NAT               192.168.247.50                                  │
-                         │ ens38      802.1Q Trunk            VLANs 10, 20                                    │
-                         │   ├── ens38.10                     192.168.10.1   (Gateway - VLAN 10)              │
-                         │   └── ens38.20                     192.168.20.1   (Gateway - VLAN 20)              │
+                         │ ens37                    WAN / NAT             192.168.254.131                     │
+                         │ ens38 & ens39           802.1Q Trunk           VLANs 10, 20                        │
+                         │       ├── ens38.10                             192.168.10.1   (Gateway - VLAN 10)  │
+                         │       └── ens39.20                             192.168.20.1   (Gateway - VLAN 20)  │
                          └────────────────────────────────────────────────────────────────────────────────────┘
                                    │
                                    │
@@ -102,7 +102,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
                          │      VLAN 10        │         │      VLAN 20        │
                          │ 192.168.10.0/24     │         │ 192.168.20.0/24     │
                          │ Gateway: .10.1      │         │ Gateway: .20.1      │
-                         │ Web01               │         │ Web02               │
+                         │       Web01         │         │       Web02         │
                          └─────────────────────┘         └─────────────────────┘
 
 
