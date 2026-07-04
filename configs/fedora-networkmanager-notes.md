@@ -641,4 +641,3 @@ tracepath google.com
 # Key Insight
 
 In nested virtualization environments (VMware Workstation → ESXi → Fedora), DHCP failures are frequently caused by upstream virtualization networking (VMnet, vSwitches, port groups, or NAT configuration) rather than the Fedora guest operating system. Always verify the networking stack from the outermost layer inward before troubleshooting the guest.
-````
