@@ -89,7 +89,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
                      │                             Router VM Network Interfaces                           │
                      ├────────────────────────────────────────────────────────────────────────────────────┤
                      │ ens37 <────────────────── WAN / NAT───────────> 192.168.254.131                    │
-                     │ ens38 & ens39           802.1Q Trunk            VLANs 10, 20                       │
+                     │ ens38 & ens39 <---------(802.1Q Trunk)--------> VLANs 10, 20                       │
                      │       ├── ens38.10                              192.168.10.1   (Gateway - VLAN 10) │
                      │       └── ens39.20                              192.168.20.1   (Gateway - VLAN 20) │
                      └───────┬────────────────────────────────────────────────────────────────────────────┘
