@@ -1,4 +1,4 @@
-# Nested ESXi Infrastructure Lab (Fedora Linux)
+─# Nested ESXi Infrastructure Lab (Fedora Linux)
 
 ![Linux](https://img.shields.io/badge/Linux-Fedora-blue)
 ![VMware](https://img.shields.io/badge/VMware-ESXi-orange)
@@ -75,7 +75,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
                                                               │
                                             ESXi vSwitch (802.1Q Trunk • VLAN 4095)
                                                               │
-                              ┌───────────────────  ──────────┼─────────────────────────────────┐
+                              ┌───────────────────────────────┼─────────────────────────────────┐
                               │                               │                                 │
                               │                               │                                 │
                               ▼                               ▼                                 ▼
