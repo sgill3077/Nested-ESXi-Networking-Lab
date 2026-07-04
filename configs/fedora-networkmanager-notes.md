@@ -16,38 +16,49 @@ ip link show
 ip addr show
 ip -4 addr show
 ip -6 addr show
+```
 
 # Connection profiles
+```bash
 nmcli connection show
 nmcli connection show --active
+```
 
 # NetworkManager
+```bash
 nmcli general status
-
+```
 # Routing
+```bash
 ip route
 ip -6 route
 ip neighbor
-
+```
 # DNS
+```bash
 resolvectl status
-
+```
 # Hostname
+```bash
 hostnamectl
-
+```
 # Verify default gateway
+```bash
 ping -c4 $(ip route | awk '/default/ {print $3}')
-
+```
 # Internet connectivity
+```bash
 ping -c4 8.8.8.8
 ping -c4 google.com
-
+```
 # Resource utilization
+```bash
 free -h
 vmstat 1 5
 df -h
-
+```
 # NetworkManager logs
+```bash
 journalctl -u NetworkManager --since "30 min ago"
 journalctl -fu NetworkManager
 ```
@@ -590,6 +601,8 @@ cat /etc/resolv.conf
 
 # All-in-One Troubleshooting Commands
 
+<detail>
+    
 ```bash
 hostnamectl
 
@@ -622,6 +635,7 @@ ping -c4 google.com
 tracepath google.com
 ```
 
+</detail>
 ---
 
 # Key Insight
