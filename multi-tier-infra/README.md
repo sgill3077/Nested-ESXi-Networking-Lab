@@ -256,7 +256,7 @@ DevOps
 Infrastructure Automation
 Systems Engineering
 
-## With VLAN isolation, jump-box routing, and load balancing, it mirrors production-style architecture.
+With VLAN isolation, jump-box routing, and load balancing, it mirrors production-style architecture.
 
 ## 📌 Resume Summary
 
