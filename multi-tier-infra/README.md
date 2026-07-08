@@ -73,7 +73,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
                     │                         Runs Nested VMware ESXi & Router VM                          │
                     └─────────────────────────────────────────┬────────────────────────────────────────────┘
                                                               │
-                                            ESXi vSwitch (802.1Q Trunk • VLAN 4095)
+                                            ESXi vSwitch1 (802.1Q Trunk • VLAN 4095)
                                                               │
                               ┌───────────────────────────────┼─────────────────────────────────┐
                               │                               │                                 │
