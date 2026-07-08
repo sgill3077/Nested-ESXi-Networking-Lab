@@ -1,4 +1,4 @@
-─# Nested ESXi Infrastructure Lab (Fedora Linux)
+# Nested ESXi Infrastructure Lab (Fedora Linux)
 
 ![Linux](https://img.shields.io/badge/Linux-Fedora-blue)
 ![VMware](https://img.shields.io/badge/VMware-ESXi-orange)
