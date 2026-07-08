@@ -65,7 +65,6 @@ Configure firewalld zones correctly on router VM:
 
 ```bash
 sudo firewall-cmd --zone=trusted --add-interface=ens38 --permanent
-sudo firewall-cmd --zone=trusted --add-interface=ens39 --permanent
 sudo firewall-cmd --reload
 ```
 
@@ -171,7 +170,7 @@ After switching to trunk mode:
 
 - Web01 successfully reached `192.168.10.1`
 - Web02 successfully reached `192.168.20.1`
-- Router VLAN interfaces (`ens38.10`, `ens39.20`) came online
+- Router VLAN interfaces (`ens38.10`, `ens38.20`) came online
 - Multi-VLAN routing and load balancing worked as designed
 
 ---
