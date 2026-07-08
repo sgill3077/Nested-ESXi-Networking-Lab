@@ -8,8 +8,8 @@
   - Reverse proxy & load balancer (`nginx`)
   - Interfaces:
     - `ens37` → External NAT (192.168.254.131/24)
-    - `ens38` → VLAN10 (192.168.10.1/24)
-    - `ens39` → VLAN20 (192.168.20.1/24)
+    - `ens38.10` → VLAN10 (192.168.10.1/24)
+    - `ens38.20` → VLAN20 (192.168.20.1/24)
 
 - **Backend VMs:**
   - **web01** → VLAN10 (192.168.10.50)
