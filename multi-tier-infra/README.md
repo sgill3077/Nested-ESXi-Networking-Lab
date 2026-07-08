@@ -129,7 +129,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
 
 | Component     | Interface Role     | Subnet / IP         |
 | :------------ | :----------------- | :------------------ |
-| **Router VM** | External WAN (NAT) | `192.168.247.50/24` |
+| **Router VM** | External WAN (NAT) | `192.168.254.131/24`|
 | **Router VM** | VLAN 10 Gateway    | `192.168.10.1/24`   |
 | **Router VM** | VLAN 20 Gateway    | `192.168.20.1/24`   |
 | **Web01**     | Backend Node       | `192.168.10.50/24`  |
