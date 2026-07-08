@@ -111,7 +111,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
 
 ### Traffic Flow
 
-1. Client → Router NAT (247.50)
+1. Client → Router NAT (254.131)
 2. Router → Nginx Reverse Proxy
 3. Nginx → Web01 (VLAN10) or Web02 (VLAN20)
 4. Backend servers isolated from each other via firewalld
