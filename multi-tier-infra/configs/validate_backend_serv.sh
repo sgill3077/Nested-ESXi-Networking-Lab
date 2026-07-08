@@ -1,59 +1,160 @@
-#!/bin/bash
-# Lab Validation Script
-# Run on Router VM
+#!/usr/bin/env bash
+# Backend Validation Script (web01 / web02)
+# Screenshot-friendly version with full ping output
 
-echo "=== Lab Validation Start ==="
+echo "===================================================="
+echo "              BACKEND VALIDATION START"
+echo "===================================================="
 echo ""
 
-# VLAN10: Web01
-WEB01_IP="192.168.10.50"
-WEB01_GW="192.168.10.1"
+# ------------------------------------------------------
+# 1. Detect backend identity (VLAN + peer)
+# ------------------------------------------------------
+IP=$(hostname -I | awk '{print $1}')
 
-# VLAN20: Web02
-WEB02_IP="192.168.20.50"
-WEB02_GW="192.168.20.1"
-
-echo "1. Ping gateways"
-ping -c 3 $WEB01_GW && echo "VLAN10 gateway reachable" || echo "VLAN10 gateway unreachable"
-ping -c 3 $WEB02_GW && echo "VLAN20 gateway reachable" || echo "VLAN20 gateway unreachable"
-echo ""
-
-echo "2. Ping backend servers"
-ping -c 3 $WEB01_IP && echo "Web01 reachable" || echo "Web01 unreachable"
-ping -c 3 $WEB02_IP && echo "Web02 reachable" || echo "Web02 unreachable"
-echo ""
-
-echo "3. Test VLAN isolation"
-sshpass -p "<web01-password>" ssh -o StrictHostKeyChecking=no root@$WEB01_IP "ping -c 3 $WEB02_IP" &>/dev/null
-if [ $? -ne 0 ]; then
-    echo "VLAN isolation OK: Web01 cannot reach Web02"
+if [[ "$IP" == 192.168.10.* ]]; then
+    VLAN=10
+    GW=192.168.10.1
+    ROUTER=192.168.10.1
+    PEER=192.168.20.50
+    SELF_NAME="WEB01"
+elif [[ "$IP" == 192.168.20.* ]]; then
+    VLAN=20
+    GW=192.168.20.1
+    ROUTER=192.168.20.1
+    PEER=192.168.10.50
+    SELF_NAME="WEB02"
 else
-    echo "VLAN isolation FAIL: Web01 can reach Web02"
+    echo "❌ ERROR: Unknown backend IP: $IP"
+    exit 1
 fi
-sshpass -p "<web02-password>" ssh -o StrictHostKeyChecking=no root@$WEB02_IP "ping -c 3 $WEB01_IP" &>/dev/null
+
+echo "[Identity]"
+echo "Backend Name: $SELF_NAME"
+echo "Backend IP:   $IP"
+echo "VLAN:         $VLAN"
+echo "Gateway:      $GW"
+echo "Router:       $ROUTER"
+echo "Peer Backend: $PEER"
+echo ""
+
+# ------------------------------------------------------
+# 2. Detect active interface
+# ------------------------------------------------------
+echo "[2] Detecting Active Interface"
+echo "------------------------------"
+
+IFACE=$(ip -o -4 addr show | awk '{print $2}' | grep -v '^lo$' | head -n 1)
+echo "✔ Active interface detected: $IFACE"
+echo ""
+
+# ------------------------------------------------------
+# 3. Ping gateway
+# ------------------------------------------------------
+echo "[3] Ping Gateway ($GW)"
+echo "-----------------------"
+ping -c 3 $GW
+echo ""
+
+# ------------------------------------------------------
+# 4. Ping router
+# ------------------------------------------------------
+echo "[4] Ping Router ($ROUTER)"
+echo "--------------------------"
+ping -c 3 $ROUTER
+echo ""
+
+# ------------------------------------------------------
+# 5. VLAN isolation test
+# ------------------------------------------------------
+echo "[5] VLAN Isolation Test"
+echo "------------------------"
+echo "Ping Peer Backend ($PEER) — SHOULD FAIL"
+ping -c 3 $PEER
 if [ $? -ne 0 ]; then
-    echo "VLAN isolation OK: Web02 cannot reach Web01"
+    echo "✔ VLAN isolation OK: Cannot reach $PEER"
 else
-    echo "VLAN isolation FAIL: Web02 can reach Web01"
+    echo "❌ VLAN isolation FAIL: Can reach $PEER"
 fi
 echo ""
 
-echo "4. Test nginx load balancer"
-for i in {1..6}; do
+# ------------------------------------------------------
+# 6. DNS test
+# ------------------------------------------------------
+echo "[6] DNS Test"
+echo "-------------"
+dig +short google.com
+if [ $? -eq 0 ]; then
+    echo "✔ DNS OK"
+else
+    echo "❌ DNS failed"
+fi
+echo ""
+
+# ------------------------------------------------------
+# 7. Internet reachability
+# ------------------------------------------------------
+echo "[7] Internet Reachability"
+echo "--------------------------"
+curl -I https://google.com --max-time 5
+if [ $? -eq 0 ]; then
+    echo "✔ Internet OK"
+else
+    echo "❌ Internet unreachable"
+fi
+echo ""
+
+# ------------------------------------------------------
+# 8. Local web service
+# ------------------------------------------------------
+echo "[8] Local Web Service Test"
+echo "---------------------------"
+curl -s http://localhost | head -n 5
+if [ $? -eq 0 ]; then
+    echo "✔ Local web service OK"
+else
+    echo "❌ Local web service failed"
+fi
+echo ""
+
+# ------------------------------------------------------
+# 9. Reverse proxy test
+# ------------------------------------------------------
+echo "[9] Reverse Proxy Test (router → nginx → backend)"
+echo "--------------------------------------------------"
+curl -s http://192.168.254.131 | head -n 5
+if [ $? -eq 0 ]; then
+    echo "✔ Reverse proxy OK"
+else
+    echo "❌ Reverse proxy failed"
+fi
+echo ""
+
+# ------------------------------------------------------
+# 10. Load balancer test
+# ------------------------------------------------------
+echo "[10] Load Balancer Responses (web.lab)"
+echo "---------------------------------------"
+for i in {1..10}; do
+    echo "Request #$i:"
     curl -s http://web.lab
     echo ""
 done
+echo "✔ Load balancer test complete"
 echo ""
 
-echo "5. Check router interfaces"
-ip a show ens38
-ip a show ens38.10
-ip a show ens38.20
-ip a show ens37
+# ------------------------------------------------------
+# 11. Interface + routing info
+# ------------------------------------------------------
+echo "[11] Interface + Routing Info"
+echo "------------------------------"
+ip -c a show "$IFACE"
 echo ""
-
-echo "6. Routing table"
 ip route show
 echo ""
+echo "✔ Interface + routing displayed"
+echo ""
 
-echo "=== Lab Validation End ==="
+echo "===================================================="
+echo "              BACKEND VALIDATION END"
+echo "===================================================="
