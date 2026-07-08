@@ -107,10 +107,6 @@ Extended the lab into a multi-tier infrastructure by implementing:
                     └──────────────────┘          └───────────────────┘      │  • dnsmasq DNS (*.lab)      │
                                                                              │  • Nginx Reverse Proxy + LB │
                                                                              └─────────────────────────────┘
-                     
-
-
-                         
 ```
 
 ### Traffic Flow
