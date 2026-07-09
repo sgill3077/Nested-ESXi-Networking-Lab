@@ -120,7 +120,7 @@ Extended the lab into a multi-tier infrastructure by implementing:
 
 - **VLAN Isolation:** Strict firewall rules ensure backend servers (`Web01` and `Web02`) are isolated from each other and the external network, making them reachable _only_ through the Router/Jump Box.
 - **Traffic Flow:**
-  - Inbound requests hit the Router VM's external NAT interface (`192.168.247.50`).
+  - Inbound requests hit the Router VM's external NAT interface (`192.168.254.131`).
   - An **Nginx Reverse Proxy** acts as a load balancer on the Router VM, distributing incoming traffic across both backend web servers.
 
 ---
