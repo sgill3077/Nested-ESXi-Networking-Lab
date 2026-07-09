@@ -33,7 +33,7 @@ It evolves from basic virtualization into a **production-style multi-tier archit
 - VLAN segmentation:
   - **VLAN10** → Web01 (backend, only reachable via router)
   - **VLAN20** → Web02 (backend, only reachable via router)
-- NAT (.247) network is reserved for router host access
+- NAT (.254) network is reserved for router host access
 
 ---
 
